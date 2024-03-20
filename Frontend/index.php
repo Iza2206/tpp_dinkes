@@ -1,2 +1,2 @@
 <?php
-header("location:\Surveyor\login");
+header("location:\Administrator\login");

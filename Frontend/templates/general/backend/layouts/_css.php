@@ -9,3 +9,7 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css"                              rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" >
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+

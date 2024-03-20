@@ -22,45 +22,45 @@
                                         data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <Form>
+                                <form action="controllers/_save_unit_kerja" method="post">
                                     <div class="modal-body">
                                         <div class="row mb-3">
                                             <label for="inputText" class="col-sm-2 col-form-label">Nama Unit Kerja</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="inp_nm_unit" class="form-control">
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label for="inputEmail" class="col-sm-2 col-form-label">Alamat</label>
                                             <div class="col-sm-9">
-                                                <input type="email" class="form-control">
+                                                <input type="text" name="inp_alamat" class="form-control">
                                             </div>
                                         </div>
                                         <h5 class="modal-title"><b>Data Pimpinan Unit Kerja</b></h5>
                                         <div class="row mb-3">
                                             <label for="inputPassword" class="col-sm-2 col-form-label">NIP</label>
                                             <div class="col-sm-9">
-                                                <input type="password" class="form-control">
+                                                <input type="number" name="inp_nip" class="form-control">
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label for="inputNumber" class="col-sm-2 col-form-label">Nama</label>
                                             <div class="col-sm-9">
-                                                <input type="number" class="form-control">
+                                                <input type="text" name="inp_nm_pegawai" class="form-control">
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label for="inputNumber" class="col-sm-2 col-form-label">Jabatan</label>
                                             <div class="col-sm-9">
-                                                <input type="number" class="form-control">
+                                                <input type="text" name="inp_jabatan" class="form-control">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                        <button type="button" class="btn btn-primary">Simpan</button>
+                                        <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-md">Submit</button>
                                     </div>
-                                </Form>
+                                </form>
                             </div>
                         </div>
                     </div>

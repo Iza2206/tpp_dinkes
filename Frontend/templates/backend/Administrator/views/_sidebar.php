@@ -63,9 +63,9 @@
                     </a>
                     <ul class="submenu">
                         <li>
-                            <a href="proses-tpp-unitkerja1.html">
+                            <a href="?page=Proses_TPP_UnitKerja">
                                 <i class="bi bi-circle"></i>
-                                <span>Proses TPP dari Unitkerja</span>
+                                <span>Proses TPP dari Unit kerja</span>
                             </a>
                         </li>
                         <li>
