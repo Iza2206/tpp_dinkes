@@ -182,9 +182,9 @@
                                 <th scope="col">Bulan</th>
                                 <th scope="col">Tahun</th>
                                 <th scope="col">Unit Kerja</th>
+                                <th scope="col">Rencana Bayar</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Detail Rincian</th>
-                                <th scope="col">Proses</th>
+                                <th scope="col">Persetujuan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -193,28 +193,19 @@
                                 <td>Januari</td>
                                 <td>2023</td>
                                 <td>DINAS KESEHATAN</td>
+                                <td>2024-03-18</td>
                                 <td>Sudah Disetujui</td>
                                 <td>
-                                    <a href="?page=Detail_TPP" class="btn btn-primary">
-                                        <i class="bi bi-box-arrow-up-right"></i>
-                                    </a>
-                                </td>
-
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editdata">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#hapusdata">
-                                        <i class="bi bi-trash"></i>
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#persetujuan">
+                                        Persetujuan
                                     </button>
                                 </td>
                             </tr>
-                            <div class="modal fade" id="editdata" tabindex="-1">
+                            <div class="modal fade" id="persetujuan" tabindex="-1">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Data Pegawai</h5>
+                                            <h5 class="modal-title">Proses Persetujuan</h5>
                                             <button
                                                 type="button"
                                                 class="btn-close"
@@ -242,11 +233,27 @@
                                                         <input type="password" class="form-control" disabled>
                                                     </div>
                                                 </div>
-                                                <!-- yang ini baru bisa di edit -->
                                                 <div class="row mb-3">
                                                     <label for="inputuraian" class="col-sm-3 col-form-label">Uraian</label>
                                                     <div class="col-sm-9">
-                                                        <textarea class="form-control"></textarea>
+                                                        <textarea class="form-control" disabled></textarea>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mb-3">
+                                                    <label for="inputUnitKerja" class="col-sm-3 col-form-label">Persetujuan</label>
+                                                    <div class="col-sm-9">
+                                                        <select id="inputUnitKerja" class="form-select">
+                                                            <option selected disabled>Pilih Persetujuan</option>
+                                                            <option value="1">Sudah Disetujui</option>
+                                                            <option value="2">Belum Setujui</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputEmail" class="col-sm-3 col-form-label">Rencana Bayar (YYYY-MM-DD)</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="date" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -255,23 +262,6 @@
                                                 </div>
                                             </div>
                                         </Form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal fade" id="hapusdata" tabindex="-1" aria-labelledby="hapusdataLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="hapusdataLabel">Konfirmasi Hapus</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Yakin menghapus data?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                            <button type="button" class="btn btn-danger">Ya</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

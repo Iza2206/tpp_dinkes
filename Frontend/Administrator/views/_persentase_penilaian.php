@@ -92,10 +92,6 @@
                     <!-- End Large Modal-->
                     <!-- Table with stripped rows -->
                     <div class="table-responsive">
-                        <div class="btn-group float-right">
-                        <button type="button" onclick="exportToExcel('myTable')" class="btn btn-primary btn-md">Export to Excel</button>
-                            <button onclick="exportToPdf('myTable')" class="btn btn-danger ms-3" >Export PDF</button>
-                        </div>
                         <table id="myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -141,75 +137,3 @@
         </div>
     </div>
 </section>
-<script>
-    function exportToExcel(tableId) {
-        // Ambil elemen tabel berdasarkan ID
-        var table = document.getElementById(tableId);
-        var rows = table.querySelectorAll('tr');
-      
-        // Buat objek Excel dengan format yang sesuai
-        var excel = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">';
-        excel += '<head><meta charset="UTF-8"></head><body>';
-
-        excel += '<style>';
-        excel += 'h5 { margin: 0; padding: 0; }'; // Mengatur margin dan padding menjadi 0 untuk tag h5
-        excel += '</style>';
-
-        excel += '<h5>LAMPIRAN V</h5>';
-        excel += '<h5>PERATURAN BUPATI DELI SERDANG</h5>';
-        excel += '<h5>NOMOR 04 TAHUN 2019</h5>';
-        excel += '<h5>TENTANG</h5>';
-        excel += '<h5>TAMBAHAN PENGHASILAN PEGAWAI NEGERI SIPIL DAERAH</h5>';
-        excel += '<h5>KABUPATEN DELI SERDANG</h5>';
-        // Tambahkan judul tabel dan bulan
-        excel += '<h3 style="text-align: center;">REKAPITULASI PERSENTASE PENILAIAN ASPEK PERILAKU KERJA DAN ASPEK PRESTASI KERJA PNSD<br>';
-        excel += 'DINAS KESEHATAN KABUPATEN DELI SERDANG<br>';
-        excel += 'DINAS KESEHATAN</h3>';
-
-        excel += '<h5>BULAN: JANUARI 2023</h5>';
-
-        // Tambahkan tabel dengan struktur yang sesuai
-        excel += '<table style="border: 1px solid black; border-collapse: collapse; font-family: arial; font-size: 8pt; width: 100%;">';
-        for (var i = 0; i < rows.length; i++) {
-            excel += rows[i].outerHTML;
-        }
-        excel += '</table>';
-
-
-        excel += '<table style="border-collapse: collapse; font-family: Arial Narrow; font-size: 8pt; width: 100%;">';
-        excel += '<tr>';
-        excel += '<td colspan="3" style="border: none;">TELAH DIVERIFIKASI OLEH<br>Tanggal</td>';
-        excel += '<td colspan="3" style="border: none;">Pejabat di Bidang Pemberhentian dan Pensiun BK</td>';
-        excel += '<td colspan="6" style="border: none; padding-left: 50px;">Lubuk Pakam,</td>';
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="3" style="border: none;">Ka. Sub. Bag. Hukum, Kepegawaian dan Umum<br>Dinas Kesehatan Kabupaten Deli Serdang</td>';
-        excel += '<td colspan="3" style="border: none;">NIP<br>Pejabat di Bidang Penilaian Kinerja Aparatur dan Promosi BKD</td>';
-        excel += '<td colspan="6" style="border: none; padding-left: 50px;">Sekretaris Dinas Kesehatan<br>Dinas Kesehatan Kabupaten Deli Serdang</td>';
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="3" style="border: none; padding: 5px; padding-top: 50px;"><u>Oman</u><br>NIP. 197107121993031009</td>';
-        excel += '<td colspan="3" style="border: none; padding-top: 50px;">NIP : 197704182003122009</td>';
-        excel += '<td colspan="6" style="border: none; padding-top: 50px; padding-left: 50px;"><u>dr. Tetty Rossanti Keliath</u><br>NIP : 197704182003122009</td>';
-        excel += '</tr>';
-        excel += '</table>';
-
-        
-        // Tutup tag HTML
-        excel += '</body></html>';
-
-        // Buat blob dari objek Excel
-        var blob = new Blob([excel], { type: 'application/vnd.ms-excel' });
-        
-        // Buat URL dari blob
-        var url = URL.createObjectURL(blob);
-        
-        // Buat link untuk download file Excel
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = 'exported_data.xls'; // Nama file Excel yang akan diunduh
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
-</script>

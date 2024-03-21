@@ -96,7 +96,7 @@
                                 <td>45.000</td>
                                 <td>
                                     <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editdata">
-                                        <i class="bi bi-pencil-square"></i>
+                                        Isi Data
                                     </button>
                                     <button type="button" class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#hapusdata">
                                         <i class="bi bi-trash"></i>
@@ -114,12 +114,16 @@
                                             <!-- Isi form edit data disini -->
                                             <form>
                                                 <div class="mb-3">
-                                                    <label for="nama" class="form-label">Nama:</label>
-                                                    <input type="text" class="form-control" id="nama" placeholder="Masukkan nama">
+                                                    <label for="nama" class="form-label">Nama</label>
+                                                    <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="umur" class="form-label">Umur:</label>
-                                                    <input type="number" class="form-control" id="umur" placeholder="Masukkan umur">
+                                                    <label for="umur" class="form-label">BPJS Gaji (4%)</label>
+                                                    <input type="number" class="form-control" id="BPJSGaji" placeholder="Masukkan BPJS Gaji (4%)">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="umur" class="form-label">BPJS TPP (4%)</label>
+                                                    <input type="number" class="form-control" id="BPJSTPP" placeholder="Masukkan BPJS TPP (4%)">
                                                 </div>
                                                 <!-- Tambahkan field lainnya sesuai kebutuhan -->
                                             </form>
@@ -131,139 +135,71 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal fade" id="editdata" tabindex="-1">
-                                <div class="modal-dialog modal-lg">
+                            <div class="modal fade" id="editdata" tabindex="-1" aria-labelledby="editdata" aria-hidden="true">
+                                <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Data Pegawai</h5>
-                                            <button
-                                                type="button"
-                                                class="btn-close"
-                                                data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
+                                            <h5 class="modal-title" id="editdata">Isi Presentase Komponen TPP</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <Form>
-                                            <div class="modal-body">
-                                                <div class="row mb-3">
-                                                    <label for="inputText" class="col-sm-3 col-form-label">Nomor Induk Pegawai (NIP)</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control">
+                                        <div class="modal-body">
+                                            <!-- Isi form edit data disini -->
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="nama" class="form-label">NIP</label>
+                                                    <input type="text" class="form-control" id="nama" disabel>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="umur" class="form-label">Nama</label>
+                                                    <input type="number" class="form-control" id="BPJSGaji" disable>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="umur" class="form-label">Besaran TPP</label>
+                                                    <input type="number" class="form-control" id="BPJSTPP" disabel>
+                                                </div>
+                                                <hr>
+                                                <h5>Aspek Perilaku Kerja</h5>
+                                                <div class="mb-3">
+                                                    <label for="nama" class="form-label">Kehadiran</label>
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" id="nama">
+                                                        <span class="input-group-text" style="color: red;">(Max:30)</span>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputEmail" class="col-sm-3 col-form-label">Nama Lengkap</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="email" class="form-control">
+                                                <h5>Aspek Prestasi Kerja</h5>
+                                                <div class="mb-3">
+                                                    <label for="nama" class="form-label">SKP</label>
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" id="nama">
+                                                        <span class="input-group-text" style="color: red;">(Max:20)</span>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputPassword" class="col-sm-3 col-form-label">Tanggal Lahir <br> (Tahun-Bulan-Hari)</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="password" class="form-control">
+                                                <div class="mb-3">
+                                                    <label for="nama" class="form-label">Laporan Harian</label>
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" id="nama" >
+                                                        <span class="input-group-text" style="color: red;">(Max:50)</span>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputNumber" class="col-sm-3 col-form-label">Alamat</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control">
-                                                    </div>
+                                                </h5>Pengurangan TPP</h5>
+                                                <div class="mb-3">
+                                                    <label for="umur" class="form-label">Terlambat Datang</label>
+                                                    <input type="number" class="form-control" id="BPJSGaji">
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputNumber" class="col-sm-3 col-form-label">Jabatan</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control">
-                                                    </div>
+                                                <div class="mb-3">
+                                                    <label for="umur" class="form-label">Pulang Sebelum Waktunya</label>
+                                                    <input type="number" class="form-control" id="BPJSTPP">
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputNumber" class="col-sm-3 col-form-label">Nomor Pokok Wajib Pajak (NPWP)</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="number" class="form-control">
-                                                    </div>
+                                                <div class="mb-3">
+                                                    <label for="umur" class="form-label">Keterangan</label>
+                                                    <input type="text" class="form-control" id="BPJSTPP">
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputUnitKerja" class="col-sm-3 col-form-label">Unit Kerja</label>
-                                                    <div class="col-sm-9">
-                                                        <select id="inputUnitKerja" class="form-select">
-                                                            <option selected disabled>Pilih salah satu</option>
-                                                            <option value="1">Unit Kerja 1</option>
-                                                            <option value="2">Unit Kerja 2</option>
-                                                            <option value="3">Unit Kerja 3</option>
-                                                            <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputUnitKerja" class="col-sm-3 col-form-label">Golongan Pegawai</label>
-                                                    <div class="col-sm-9">
-                                                        <select id="inputUnitKerja" class="form-select">
-                                                            <option selected disabled>Pilih salah satu</option>
-                                                            <option value="1">Golongan 1</option>
-                                                            <option value="2">Golongan 2</option>
-                                                            <option value="3">Golongan 3</option>
-                                                            <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputNumber" class="col-sm-3 col-form-label">Besaran Tunjangan Pokok (TPP)</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="number" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputNumber" class="col-sm-3 col-form-label">Nomor Rekening Bank</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputUnitKerja" class="col-sm-3 col-form-label">Status Pegawai</label>
-                                                    <div class="col-sm-9">
-                                                        <select id="inputUnitKerja" class="form-select">
-                                                            <option selected disabled>Pilih salah satu</option>
-                                                            <option value="1">Status 1</option>
-                                                            <option value="2">Status 2</option>
-                                                            <option value="3">Status 3</option>
-                                                            <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputNumber" class="col-sm-3 col-form-label">Umur Pensiun</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="number" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputUnitKerja" class="col-sm-3 col-form-label">Sistem Asuransi Kesehatan (Saskerja - Taspen)</label>
-                                                    <div class="col-sm-9">
-                                                        <select id="inputUnitKerja" class="form-select">
-                                                            <option selected disabled>Pilih salah satu</option>
-                                                            <option value="1">Saskerja 1</option>
-                                                            <option value="2">Saskerja 2</option>
-                                                            <option value="3">Saskerja 3</option>
-                                                            <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputNumber" class="col-sm-3 col-form-label">BPJS di Gaji</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="number" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="inputNumber" class="col-sm-3 col-form-label">Kelas Jabatan</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="number" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                                    <button type="button" class="btn btn-primary">Simpan</button>
-                                                </div>
-                                            </div>
-                                        </Form>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                            <button type="button" class="btn btn-primary">Simpan Perubahan</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -287,10 +223,8 @@
                         </tbody>
                     </table>
                     <!-- End Table with stripped rows -->
-</div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

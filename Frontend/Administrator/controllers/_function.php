@@ -21,10 +21,28 @@ elseif($_GET['page'] == 'Data_Pegawai') {
 }
 
 // Entry Data 
+// a. Data TPPP
 // 1. Proses TPP dari Unit Kerja
 elseif($_GET['page'] == 'Proses_TPP_UnitKerja') {
     include('views/_proses_TPP_unitkerja.php');
 }
 elseif($_GET['page'] == 'Detail_TPP') {
     include('views/_detailTPP.php');
+}
+// 2. Proses TPP dari Keuangan
+elseif($_GET['page'] == 'Proses_TPP_Keuangan') {
+    include('views/_proses_TPP_keuangan.php');
+}
+elseif($_GET['page'] == 'Persetujuan_TPP') {
+    include('views/_proses_TPP_keuangan.php');
+}
+// b. Pembayaran TPP
+elseif($_GET['page'] == 'Pembayaran_TPP') {
+    include('views/_pembayaran_TPP.php');
+}
+
+// Laporan-Laporan 
+// 1. Rekapitulasi Persentase Penilaian (Lampiran V)
+elseif($_GET['page'] == 'Persentase_Penilaian') {
+    include('views/_persentase_penilaian.php');
 }
