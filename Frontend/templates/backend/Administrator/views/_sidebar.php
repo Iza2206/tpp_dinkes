@@ -112,7 +112,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="tables-data.html">
+                    <a href="?page=Report_Pembayaran">
                         <i class="bi bi-circle"></i>
                         <span>Rekapitulasi Pembayaran (Lampiran VI)</span>
                     </a>

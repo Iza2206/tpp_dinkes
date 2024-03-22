@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <div class="pagetitle">
     <h1>Rekepitulasi Persentase Penilaian Aspek Perilaku dan Prestasi Kerja (Lampiran V)</h1>
 </div>
@@ -95,59 +96,37 @@
                     <div class="table-responsive">
                         <div class="btn-group float-right">
                             <button type="button" onclick="exportToExcel('myTable')" class="btn btn-primary btn-md">Export to Excel</button>
-                            <a href="../Administrator/dashboard_blank.php?page=Print_all" target="_blank" class="btn btn-success btn-md" style="margin-left: 10px;">Export PDF</a>
+                            <button onclick="exportToPdf()">Export to PDF</button>
                         </div>
                         <table id="myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <!-- Column headers -->
-                                    <th scope="col" rowspan="2">no</th> 
-                                    <th scope="col" rowspan="2">Nama</th> 
-                                    <th scope="col" rowspan="2">NIP</th> 
-                                    <th scope="col" rowspan="2">GOL</th> 
-                                    <th scope="col" rowspan="2">JABATAN</th> 
-                                    <th scope="col"> ASPEK PERILAKU KERJA</th> 
-                                    <th scope="col" colspan="2">ASPEK PRESTASI KERJA</th> 
-                                    <th scope="col" rowspan="2">JUMLAH <br> TL1-4(%)</th> 
-                                    <th scope="col" rowspan="2">JUMLAH <br> PSW1-4(%)</th> 
-                                    <th scope="col" rowspan="2">TOTAL PERSENTASE PENILAIAN</th> 
-                                    <th scope="col" rowspan="2">KET</th> 
-                                </tr>
-                                <tr>
-                                    <!-- sub Kompenen perhitungan -->
-                                    <th scope="col">Kehadiran</th>
-                                    <th scope="col">SKP</th>
-                                    <th scope="col">Lap.Harian</th>
-                                </tr>
-                                <tr>
-                                    <!-- Column headers -->
-                                    <th scope="col">1</th> 
-                                    <th scope="col">2</th> 
-                                    <th scope="col">3</th> 
-                                    <th scope="col">4</th> 
-                                    <th scope="col">5</th> 
-                                    <th scope="col">6</th> 
-                                    <th scope="col">7</th> 
-                                    <th scope="col">8</th> 
-                                    <th scope="col">9</th> 
-                                    <th scope="col">10</th> 
-                                    <th scope="col">11</th> 
-                                    <th scope="col">12</th> 
+                                    <th scope="col">No</th> 
+                                    <th scope="col">Nama</th> 
+                                    <th scope="col">NIP</th> 
+                                    <th scope="col">GOL</th> 
+                                    <th scope="col">JABATAN</th> 
+                                    <th scope="col">KELAS JABATAN</th> 
+                                    <th scope="col">BESARAN TPP</th> 
+                                    <th scope="col">TOTAL PERSENTASE PENILAIAN</th> 
+                                    <th scope="col">JUMLAH</th> 
+                                    <th scope="col">PPh 21</th> 
+                                    <th scope="col">JUMLAH DITERIMA</th> 
                                 </tr>
                             </thead>
                             <tbody>
-                                <td scope="row">1</td>
+                                    <td scope="row">1</td>
                                     <td>Oman</td>
                                     <td>2123132123</td>
                                     <td>IV/e</td>
                                     <td>test</td>
-                                    <td>60.00</td>
-                                    <td>20.00</td>
-                                    <td>20.00</td>
-                                    <td>00.00</td>
-                                    <td>00.00</td>
-                                    <td>100%</td>
-                                    <td></td>
+                                    <td>0</td>
+                                    <td>20.000.000</td>
+                                    <td>100</td>
+                                    <td>8000000</td>
+                                    <td>1.191.342</td>
+                                    <td>0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -175,7 +154,7 @@
         excel += 'td, th { border: 1px solid black; padding: 5px; }'; // Menambahkan aturan CSS untuk sel-sel tabel
         excel += '</style>';
 
-        excel += '<h5>LAMPIRAN V</h5>';
+        excel += '<h5>LAMPIRAN VI</h5>';
         excel += '<h5>PERATURAN BUPATI DELI SERDANG</h5>';
         excel += '<h5>NOMOR 04 TAHUN 2019</h5>';
         excel += '<h5>TENTANG</h5>';
@@ -299,6 +278,13 @@
         a.click();
         document.body.removeChild(a);
     }
+    function exportToPdf() {
+    console.log('Fungsi exportToPdf() dipanggil.');
+    var doc = new jsPDF();
+    doc.text('Ini adalah konten PDF yang dibuat secara dinamis.', 10, 10);
+    doc.save('nama_file.pdf');
+}
+
 </script>
 <!-- <script>
 

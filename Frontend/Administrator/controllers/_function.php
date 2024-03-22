@@ -46,3 +46,11 @@ elseif($_GET['page'] == 'Pembayaran_TPP') {
 elseif($_GET['page'] == 'Persentase_Penilaian') {
     include('views/_persentase_penilaian.php');
 }
+// pdf
+elseif($_GET['page'] == 'Print_all') {
+    include('views/_print_all.php');
+}
+// 2. Rekapitulasi Pembayaran (Lampiran VI)
+elseif($_GET['page'] == 'Report_Pembayaran') {
+    include('views/_reportPembayaran.php');
+}
