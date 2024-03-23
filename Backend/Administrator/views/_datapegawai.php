@@ -76,18 +76,17 @@
                                         <div class="row mb-3">
                                             <label for="inputUnitKerja" class="col-sm-3 col-form-label">Unit Kerja</label>
                                             <div class="col-sm-9">
-                                            <select id="inputUnitKerja" class="form-select" name="inp_nm_unit">
-                                                <option selected disabled>-- Pilih Unit Kerja --</option>
-                                                <?php
-                                                $cekUnit = $mysqli->query("SELECT * FROM dt_unit_kerja");
-                                                while($LoadQryUnit = $cekUnit->fetch_array()) { 
-                                                ?>
-                                                    <option value="<?php echo $LoadQryUnit['inp_nm_unit']; ?>"><?php echo $LoadQryUnit['inp_nm_unit']; ?></option>
-                                                <?php 
-                                                    } // Tutup while loop
-                                                ?>
-                                                <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
-                                            </select>
+                                            <select class="form-select inp_nm_unit" name="id_unit">
+                                                    <option selected disabled>-- Pilih Unit Kerja --</option>
+                                                    <?php
+                                                        // Query untuk mengambil data dari database
+                                                        $result = $mysqli->query("SELECT id_unit, inp_nm_unit FROM dt_unit_kerja");
+                                                        while($row = $result->fetch_assoc()) {
+                                                            echo "<option value='".$row['id_unit']."'>".$row['inp_nm_unit']."</option>";
+                                                        }
+                                                    ?>
+                                                </select>
+                                                <input type="hidden" name="inp_nm_unit" class="inp_nm_unit_hidden" value="">
                                             </div>
                                         </div>
                                         <div class="row mb-3">
@@ -206,33 +205,29 @@
                         while($LoadQryPegawai= $cekPegawai->fetch_array()) {
                         ?>
                         <tr>
-                                <td class="text-center"><?=$no++;?></td>
-                                <td class="text-center"><?=$LoadQryPegawai['inp_nip_pegawai'];?></td>
-                                <td class="text-center"><?=$LoadQryPegawai['inp_nm_lengkap'];?></td>
-                                <td class="text-center"><?=$LoadQryPegawai['inp_nm_unit'];?></td>
-                                <td class="text-center"><?=$LoadQryPegawai['inp_no_rekening'];?></td>
-                                <td class="text-center"><?=$LoadQryPegawai['inp_status_peg'];?></td>
-                                <td class="text-center"><?=$LoadQryPegawai['inp_besaran_tpp']; ?></td>
-                                <td class="text-center"><?=$LoadQryPegawai['inp_bpjs_gaji']; ?></td>
-                                <td>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editdata" data-pegawai="<?=$LoadQryPegawai['pegawai_id'];?>">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#hapusdata">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
+                            <td class="text-center"><?= $no++; ?></td>
+                            <td class="text-center"><?=$LoadQryPegawai['inp_nip_pegawai'];?></td>
+                            <td class="text-center"><?=$LoadQryPegawai['inp_nm_lengkap'];?></td>
+                            <td class="text-center"><?=$LoadQryPegawai['inp_nm_unit'];?></td>
+                            <td class="text-center"><?=$LoadQryPegawai['inp_no_rekening'];?></td>
+                            <td class="text-center"><?=$LoadQryPegawai['inp_status_peg'];?></td>
+                            <td class="text-center"><?=$LoadQryPegawai['inp_besaran_tpp']; ?></td>
+                            <td class="text-center"><?=$LoadQryPegawai['inp_bpjs_gaji']; ?></td>
+                            <td>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editdata" data-pegawai="<?=$LoadQryPegawai['pegawai_id'];?>">
+                                <i class="bi bi-pencil-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#hapusdata">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            </td>
                             </tr>
                             <div class="modal fade" id="editdata" tabindex="-1">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title">Data Pegawai</h5>
-                                            <button
-                                                type="button"
-                                                class="btn-close"
-                                                data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <form ction="controllers/_save_edit_pegawai" method="POST">
                                         <?php
@@ -414,3 +409,12 @@
         </div>
     </div>
 </section>
+
+<!-- ================================================================================================================================ -->
+<script>
+    document.querySelector('.inp_nm_unit').addEventListener('change', function() {
+        var selectedOption = this.options[this.selectedIndex];
+        var hiddenInput = document.querySelector('.inp_nm_unit_hidden');
+        hiddenInput.value = selectedOption.textContent;
+    });
+</script>

@@ -106,11 +106,6 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <form action="controllers/_save_edit_unit" method="POST">
-                                        <?php
-                                        $no = 1;
-                                        $cekUnit = $mysqli->query("SELECT * FROM dt_unit_kerja");
-                                        while($LoadQryUnit= $cekUnit->fetch_array()) {
-                                        ?>
                                             <div class="modal-body">
                                                 <div class="row mb-3">
                                                     <label for="inputText" class="col-sm-2 col-form-label">Nama Unit Kerja</label>
@@ -171,7 +166,6 @@
                             </div>
                         </div>
                             <?php } 
-                                }
                             ?>
                         </tbody>
                     </table>
