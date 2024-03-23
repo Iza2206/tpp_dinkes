@@ -59,6 +59,8 @@
                                 <th scope="col" rowspan="2">Besaran TPP</th> 
                                 <th scope="col" colspan="5">komponen perhitungan</th> 
                                 <th scope="col" rowspan="2">JML%</th> 
+                                <th scope="col" rowspan="2">Pot Bulan lalu</th> 
+                                <th scope="col" rowspan="2">Pot. Hukuman Disiplin</th> 
                                 <th scope="col" colspan="3">BPJS Gaji</th> 
                                 <th scope="col" rowspan="2">Action</th> 
                             </tr>
@@ -87,6 +89,8 @@
                                 <td>00.00</td>
                                 <td>00.00</td>
                                 <td>100</td>
+                                <td>00.00</td>
+                                <td>00.00</td>
                                 <td>300.000 <br>
                                     <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#editbpjs">
                                         <i class="bi bi-pencil-square"></i>
@@ -188,6 +192,14 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="umur" class="form-label">Pulang Sebelum Waktunya</label>
+                                                    <input type="number" class="form-control" id="BPJSTPP">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="umur" class="form-label">Pot Bulan lalu</label>
+                                                    <input type="number" class="form-control" id="BPJSGaji">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="umur" class="form-label">Pot. Hukuman Disiplin</label>
                                                     <input type="number" class="form-control" id="BPJSTPP">
                                                 </div>
                                                 <div class="mb-3">

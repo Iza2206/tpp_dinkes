@@ -146,24 +146,30 @@
         var table = document.getElementById(tableId);
         var rows = table.querySelectorAll('tr');
 
-        // Tambahkan properti CSS untuk border pada tabel
-        table.style.border = '1px solid #000'; // Ubah sesuai kebutuhan
+        // Buat objek Excel dengan format yang sesuai
+        var excel = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">';
+        excel += '<head><meta charset="UTF-8"></head><body>';
 
-        // Tambahkan properti CSS untuk <td> dan <th>
-        var cells = table.querySelectorAll('td, th');
-        cells.forEach(function(cell) {
-            cell.style.border = '1px solid #000'; // Ubah sesuai kebutuhan
-            cell.style.padding = '8px'; // Tambahkan padding sesuai kebutuhan
-        });
+        excel += '<style>';
+        excel += 'table { border-collapse: collapse; width: 100%; }'; // Menambahkan aturan CSS untuk tabel
+        excel += 'td, th { border: 1px solid black; padding: 5px; }'; // Menambahkan aturan CSS untuk sel-sel tabel
+        excel += '</style>';
 
-        var excel = '<table>';
+        // Tambahkan judul tabel dan bulan
+        excel += '<h3 style="text-align: center;">DAFTAR PEMBAYARAN TAMBAHAN PENGHASILAN PEGAWAI <br>';
+        excel += 'DINAS KESEHATAN <br>';
+        excel += 'BULAN : JUNI & JULI 2023</h3>';
+
+        excel += '<table>';
 
         // Loop melalui setiap baris tabel dan tambahkan ke objek Excel
         for (var i = 0; i < rows.length; i++) {
-            excel += rows[i].outerHTML;
+            excel += rows[i].outerHTML; // Menggunakan innerHTML daripada outerHTML agar tidak mengikutsertakan tag <tr> pada judul
         }
 
         excel += '</table>';
+
+        excel += '</body></html>';
 
         // Buat blob dari objek Excel
         var blob = new Blob([excel], { type: 'application/vnd.ms-excel' });
@@ -174,10 +180,11 @@
         // Buat link untuk download file Excel
         var a = document.createElement('a');
         a.href = url;
-        a.download = 'Laporan_Pembayaran_Bank.xls'; // Nama file Excel yang akan diunduh
+        a.download = 'Laporan Pembayaran Bank.xls'; // Nama file Excel yang akan diunduh
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
     }
 </script>
+
 

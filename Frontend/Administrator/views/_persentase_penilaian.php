@@ -101,42 +101,43 @@
                             <thead>
                                 <tr>
                                     <!-- Column headers -->
-                                    <th scope="col" rowspan="2">no</th> 
-                                    <th scope="col" rowspan="2">Nama</th> 
-                                    <th scope="col" rowspan="2">NIP</th> 
-                                    <th scope="col" rowspan="2">GOL</th> 
-                                    <th scope="col" rowspan="2">JABATAN</th> 
-                                    <th scope="col"> ASPEK PERILAKU KERJA</th> 
-                                    <th scope="col" colspan="2">ASPEK PRESTASI KERJA</th> 
-                                    <th scope="col" rowspan="2">JUMLAH <br> TL1-4(%)</th> 
-                                    <th scope="col" rowspan="2">JUMLAH <br> PSW1-4(%)</th> 
-                                    <th scope="col" rowspan="2">TOTAL PERSENTASE PENILAIAN</th> 
-                                    <th scope="col" rowspan="2">KET</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">no</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Nama</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">NIP</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">GOL</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">JABATAN</th> 
+                                    <th scope="col" style="text-align: center;"> ASPEK PERILAKU KERJA</th> 
+                                    <th scope="col" colspan="2" style="text-align: center;">ASPEK PRESTASI KERJA</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">JUMLAH <br> TL1-4(%)</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">JUMLAH <br> PSW1-4(%)</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">TOTAL PERSENTASE PENILAIAN</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">KET</th> 
                                 </tr>
+
                                 <tr>
                                     <!-- sub Kompenen perhitungan -->
-                                    <th scope="col">Kehadiran</th>
-                                    <th scope="col">SKP</th>
-                                    <th scope="col">Lap.Harian</th>
+                                    <th scope="col" style="text-align: center;">Kehadiran</th>
+                                    <th scope="col" style="text-align: center;">SKP</th>
+                                    <th scope="col" style="text-align: center;">Lap.Harian</th>
                                 </tr>
                                 <tr>
                                     <!-- Column headers -->
-                                    <th scope="col">1</th> 
-                                    <th scope="col">2</th> 
-                                    <th scope="col">3</th> 
-                                    <th scope="col">4</th> 
-                                    <th scope="col">5</th> 
-                                    <th scope="col">6</th> 
-                                    <th scope="col">7</th> 
-                                    <th scope="col">8</th> 
-                                    <th scope="col">9</th> 
-                                    <th scope="col">10</th> 
-                                    <th scope="col">11</th> 
-                                    <th scope="col">12</th> 
+                                    <th scope="col"style="text-align: center;">1</th> 
+                                    <th scope="col"style="text-align: center;">2</th> 
+                                    <th scope="col"style="text-align: center;">3</th> 
+                                    <th scope="col"style="text-align: center;">4</th> 
+                                    <th scope="col"style="text-align: center;">5</th> 
+                                    <th scope="col"style="text-align: center;">6</th> 
+                                    <th scope="col"style="text-align: center;">7</th> 
+                                    <th scope="col"style="text-align: center;">8</th> 
+                                    <th scope="col"style="text-align: center;">9</th> 
+                                    <th scope="col"style="text-align: center;">10</th> 
+                                    <th scope="col"style="text-align: center;">11</th> 
+                                    <th scope="col"style="text-align: center;">12</th> 
                                 </tr>
                             </thead>
                             <tbody>
-                                <td scope="row">1</td>
+                                    <td>1</td>
                                     <td>Oman</td>
                                     <td>2123132123</td>
                                     <td>IV/e</td>
