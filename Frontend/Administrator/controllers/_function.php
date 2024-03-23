@@ -33,9 +33,6 @@ elseif($_GET['page'] == 'Detail_TPP') {
 elseif($_GET['page'] == 'Proses_TPP_Keuangan') {
     include('views/_proses_TPP_keuangan.php');
 }
-elseif($_GET['page'] == 'Persetujuan_TPP') {
-    include('views/_proses_TPP_keuangan.php');
-}
 // b. Pembayaran TPP
 elseif($_GET['page'] == 'Pembayaran_TPP') {
     include('views/_pembayaran_TPP.php');
@@ -53,4 +50,24 @@ elseif($_GET['page'] == 'Print_all') {
 // 2. Rekapitulasi Pembayaran (Lampiran VI)
 elseif($_GET['page'] == 'Report_Pembayaran') {
     include('views/_reportPembayaran.php');
+}
+// pdf_pembayaran
+elseif($_GET['page'] == 'Print_all_pembayaran') {
+    include('views/_print_all_pembayaran.php');
+}
+// 3. Laporan Pembayaran Ke Bank
+elseif($_GET['page'] == 'Laporan_Pembayaran_Bank') {
+    include('views/_laporanPembayaranBank.php');
+}
+// pdf_laporan pembayaran ke bank
+elseif($_GET['page'] == 'Print_Bank') {
+    include('views/_printBank.php');
+}
+// 4. Laporan Pengajuan SPD
+elseif($_GET['page'] == 'Laporan_SPD') {
+    include('views/_laporanSPD.php');
+}
+// pdf_laporan pembayaran ke bank
+elseif($_GET['page'] == 'Print_SPD') {
+    include('views/_printSPD.php');
 }

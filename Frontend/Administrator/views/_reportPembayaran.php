@@ -1,6 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <div class="pagetitle">
-    <h1>Rekepitulasi Persentase Penilaian Aspek Perilaku dan Prestasi Kerja (Lampiran V)</h1>
+    <h1>Rekepitulasi Pembayaran (Lampiran VI)</h1>
 </div>
 
 <!-- End Page Title -->
@@ -96,39 +96,102 @@
                     <div class="table-responsive">
                         <div class="btn-group float-right">
                             <button type="button" onclick="exportToExcel('myTable')" class="btn btn-primary btn-md">Export to Excel</button>
-                            <button onclick="exportToPdf()">Export to PDF</button>
+                            <a href="../Administrator/dashboard_blank.php?page=Print_all_pembayaran" target="_blank" class="btn btn-success btn-md" style="margin-left: 10px;">Export PDF</a>
                         </div>
                         <table id="myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <!-- Column headers -->
-                                    <th scope="col">No</th> 
-                                    <th scope="col">Nama</th> 
-                                    <th scope="col">NIP</th> 
-                                    <th scope="col">GOL</th> 
-                                    <th scope="col">JABATAN</th> 
-                                    <th scope="col">KELAS JABATAN</th> 
-                                    <th scope="col">BESARAN TPP</th> 
-                                    <th scope="col">TOTAL PERSENTASE PENILAIAN</th> 
-                                    <th scope="col">JUMLAH</th> 
-                                    <th scope="col">PPh 21</th> 
-                                    <th scope="col">JUMLAH DITERIMA</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">No</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Nama/NIP</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Gol</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Jabatan/NPWP</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Kelas Jabatan</th> 
+                                    <th scope="col" colspan="6" style="text-align: center;">Jumlah TPP</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Jumlah TPP Kotor</th> 
+                                    <th scope="col" colspan="2" style="text-align: center;">Potongan</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Jumlah Potongan</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Jumlah Bersih</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">PPH Pasal 21</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Jumlah TPP yang Diterima</th> 
+                                    <th scope="col" rowspan="2" style="text-align: center;">Tanda Tangan</th> 
+                                </tr>
+                            
+                                <tr>
+                                    <!-- sub Kompenen perhitungan -->
+                                    <th scope="col" style="text-align: center;">Besaran TPP(Rp)</th>
+                                    <th scope="col" style="text-align: center;">Total Persentase Penilaian (%)</th>
+                                    <th scope="col" style="text-align: center;">Jumlah TPP</th>
+                                    <th scope="col" style="text-align: center;">Pot. Bulan Lalu</th>
+                                    <th scope="col" style="text-align: center;">Pot Hukuman Disiplin</th>
+                                    <th scope="col" style="text-align: center;">Subsidi Pemkab BPJS 4%</th>
+                                    <th scope="col" style="text-align: center;">Subsidi BPJS 4%</th>
+                                    <th scope="col" style="text-align: center;">Pot Kewajiban BPJS 1%</th>
+                                </tr>
+                                <tr>
+                                    <!-- Column headers -->
+                                    <th scope="col"style="text-align: center;">1</th> 
+                                    <th scope="col"style="text-align: center;">2</th> 
+                                    <th scope="col"style="text-align: center;">3</th> 
+                                    <th scope="col"style="text-align: center;">4</th> 
+                                    <th scope="col"style="text-align: center;">5</th> 
+                                    <th scope="col"style="text-align: center;">6</th> 
+                                    <th scope="col"style="text-align: center;">7</th> 
+                                    <th scope="col"style="text-align: center;">8</th> 
+                                    <th scope="col"style="text-align: center;">9</th> 
+                                    <th scope="col"style="text-align: center;">10</th> 
+                                    <th scope="col"style="text-align: center;">11</th> 
+                                    <th scope="col"style="text-align: center;">12=(8+11)-(9+10)</th> 
+                                    <th scope="col"style="text-align: center;">13</th> 
+                                    <th scope="col"style="text-align: center;">14</th> 
+                                    <th scope="col"style="text-align: center;">15=(13+14)</th> 
+                                    <th scope="col"style="text-align: center;">16=(12-15)</th> 
+                                    <th scope="col"style="text-align: center;">17</th> 
+                                    <th scope="col"style="text-align: center;">18=(16-17)</th> 
+                                    <th scope="col"style="text-align: center;">19</th> 
                                 </tr>
                             </thead>
                             <tbody>
-                                    <td scope="row">1</td>
-                                    <td>Oman</td>
-                                    <td>2123132123</td>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Oman/2123132123</td>
                                     <td>IV/e</td>
-                                    <td>test</td>
+                                    <td>IT SIMRS/5456417</td>
+                                    <td>0</td>
+                                    <td>8.000.000</td>
+                                    <td>100</td>
+                                    <td>20.000.000</td>
+                                    <td>0</td>
+                                    <td>0</td>
                                     <td>0</td>
                                     <td>20.000.000</td>
-                                    <td>100</td>
-                                    <td>8000000</td>
-                                    <td>1.191.342</td>
                                     <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>2.000.000</td>
+                                    <td>6.000.0000</td>
+                                    <td>17.000.000</td>
+                                    <td></td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <!-- Footer row -->
+                                    <td colspan="7">Jumlah</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -180,29 +243,19 @@
         excel += '</tr>';
         excel += '<tr>';
         excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-
-        excel += '<td colspan="3" style="border: none;">TELAH DIVERIFIKASI OLEH</td>'; // Kolom 4-12, Baris 1
+        excel += '<td colspan="3" style="border: none;">Mengetahui</td>'; // Kolom 4-12, Baris 1
         excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
         excel += '<td colspan="3" style="border: none;">Lubuk Pakam,</td>'; // Kolom 4-12, Baris 1
         excel += '</tr>';
         excel += '<tr>';
         excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
-        excel += '<td colspan="3" style="border: none;">Tanggal</td>'; // Kolom 4-12, Baris 2
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
-        excel += '<td colspan="3" style="border: none;">Ka. Sub. Bag. Hukum, Kepegawaian dan Umum</td>'; // Kolom 4-12, Baris 5
+        excel += '<td colspan="3" style="border: none;">Sekretaris Dinas Kesehatan</td>'; // Kolom 4-12, Baris 2
         excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
-        excel += '<td colspan="3" style="border: none;">Sekretaris Dinas Kesehatan</td>'; // Kolom 4-12, Baris 1
+        excel += '<td colspan="3" style="border: none;">Bendahara Pengeluaran</td>'; // Kolom 4-12, Baris 1
         excel += '</tr>';
         excel += '<tr>';
         excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
-        excel += '<td colspan="3" style="border: none;">Dinas Kesehatan Kabupaten Deli Serdang</td>'; // Kolom 4-12, Baris 6
+        excel += '<td colspan="3" style="border: none;">Dinas Kesehatan Kabupaten Deli Serdang</td>'; // Kolom 4-12, Baris 2
         excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
         excel += '<td colspan="3" style="border: none;">Dinas Kesehatan Kabupaten Deli Serdang</td>'; // Kolom 4-12, Baris 1
         excel += '</tr>';
@@ -214,49 +267,15 @@
         excel += '</tr>';
         excel += '<tr>';
         excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
-        excel += '<td colspan="3" style="border: none;"><u>Sri Rezeki</u></td>'; // Kolom 4-12, Baris 10
+        excel += '<td colspan="3" style="border: none;"><u>dr. Tetty Rossanti Keliath</u></td>'; // Kolom 4-12, Baris 5
         excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
-        excel += '<td colspan="3" style="border: none;"><u>dr. Tetty Rossanti Keliath</u></td>'; // Kolom 4-12, Baris 1
+        excel += '<td colspan="3" style="border: none;"><u>Sucita Mandasari, SKM</u></td>'; // Kolom 4-12, Baris 1
         excel += '</tr>';
         excel += '<tr>';
         excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
-        excel += '<td colspan="3" style="border: none;">NIP. 19710712 199303 1009</td>'; // Kolom 4-12, Baris 11
+        excel += '<td colspan="3" style="border: none;">NIP. 19770418 200312 2 009</td>'; // Kolom 4-12, Baris 6
         excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
-        excel += '<td colspan="3" style="border: none;">NIP. 19770418 200312 2 009</td>'; // Kolom 4-12, Baris 1
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
-        excel += '<td colspan="3" style="border: none;">Pejabat di Bidang Pemberhentian dan Pensiun BKD</td>'; // Kolom 4-12, Baris 14
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
-        excel += '<td colspan="12" style="border: none;">NIP.</td>'; // Kolom 1-12, Baris 18
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
-        excel += '<td colspan="3" style="border: none;">Pejabat di Bidang Penilaian Kinerja Aparatur dan Promosi BKD</td>'; // Kolom 4-12, Baris 19
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
-        excel += '</tr>';
-        excel += '<tr>';
-        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
-        excel += '<td colspan="12" style="border: none;">NIP.</td>'; // Kolom 1-12, Baris 23
+        excel += '<td colspan="3" style="border: none;">NIP. 19830913 201704 2 004</td>'; // Kolom 4-12, Baris 1
         excel += '</tr>';
         excel += '</table>';
 
@@ -273,17 +292,11 @@
         // Buat link untuk download file Excel
         var a = document.createElement('a');
         a.href = url;
-        a.download = 'exported_data.xls'; // Nama file Excel yang akan diunduh
+        a.download = 'Rekepitulasi Pembayaran (Lampiran VI).xls'; // Nama file Excel yang akan diunduh
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
     }
-    function exportToPdf() {
-    console.log('Fungsi exportToPdf() dipanggil.');
-    var doc = new jsPDF();
-    doc.text('Ini adalah konten PDF yang dibuat secara dinamis.', 10, 10);
-    doc.save('nama_file.pdf');
-}
 
 </script>
 <!-- <script>
