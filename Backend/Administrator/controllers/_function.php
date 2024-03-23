@@ -33,9 +33,7 @@ elseif($_GET['page'] == 'Detail_TPP') {
 elseif($_GET['page'] == 'Proses_TPP_Keuangan') {
     include('views/_proses_TPP_keuangan.php');
 }
-elseif($_GET['page'] == 'Persetujuan_TPP') {
-    include('views/_proses_TPP_keuangan.php');
-}
+
 // b. Pembayaran TPP
 elseif($_GET['page'] == 'Pembayaran_TPP') {
     include('views/_pembayaran_TPP.php');
