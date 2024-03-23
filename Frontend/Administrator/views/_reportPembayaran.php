@@ -1,6 +1,8 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <div class="pagetitle">
     <h1>Rekepitulasi Persentase Penilaian Aspek Perilaku dan Prestasi Kerja (Lampiran V)</h1>
 </div>
+
 <!-- End Page Title -->
 <section class="section">
     <div class="row">
@@ -76,11 +78,11 @@
                             <div class="d-flex align-items-center mb-3">
                                 <h5 style="margin-right: 40px; margin-bottom: 0;">Tahun</h5>
                                 <select class="form-select" style="width: 200px; margin-bottom: 0;">
-                                    <<option selected disabled>Pilih Tahun</option>
-                                <option value="1">2023</option>
-                                <option value="2">2022</option>
-                                <option value="3">2020</option>
-                                    <!-- Opsi Tahun -->
+                                    <option selected disabled>Pilih Tahun</option>
+                                    <option value="1">2023</option>
+                                    <option value="2">2022</option>
+                                    <option value="3">2020</option>
+                                        <!-- Opsi Tahun -->
                                 </select>
                             </div>
                             <div class="d-flex align-items-center mb-3">
@@ -93,45 +95,38 @@
                     <!-- Table with stripped rows -->
                     <div class="table-responsive">
                         <div class="btn-group float-right">
-                        <button type="button" onclick="exportToExcel('myTable')" class="btn btn-primary btn-md">Export to Excel</button>
-                            <button onclick="exportToPdf('myTable')" class="btn btn-danger ms-3" >Export PDF</button>
+                            <button type="button" onclick="exportToExcel('myTable')" class="btn btn-primary btn-md">Export to Excel</button>
+                            <button onclick="exportToPdf()">Export to PDF</button>
                         </div>
                         <table id="myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <!-- Column headers -->
-                                    <th scope="col" rowspan="2">no</th> 
-                                    <th scope="col" rowspan="2">Nama</th> 
-                                    <th scope="col" rowspan="2">NIP</th> 
-                                    <th scope="col" rowspan="2">GOL</th> 
-                                    <th scope="col" rowspan="2">JABATAN</th> 
-                                    <th scope="col"> ASPEK PERILAKU KERJA</th> 
-                                    <th scope="col" colspan="2">ASPEK PRESTASI KERJA</th> 
-                                    <th scope="col" rowspan="2">JUMLAH<br>TL1-4(%)</th> 
-                                    <th scope="col" rowspan="2">JUMLAH<br>PSW1-4(%)</th> 
-                                    <th scope="col" rowspan="2">TOTAL PERSENTASE PENILAIAN</th> 
-                                    <th scope="col" rowspan="2">KET</th> 
-                                </tr>
-                                <tr>
-                                    <!-- sub Kompenen perhitungan -->
-                                    <th scope="col">Kehadiran</th>
-                                    <th scope="col">SKP</th>
-                                    <th scope="col">Lap.Harian</th>
+                                    <th scope="col">No</th> 
+                                    <th scope="col">Nama</th> 
+                                    <th scope="col">NIP</th> 
+                                    <th scope="col">GOL</th> 
+                                    <th scope="col">JABATAN</th> 
+                                    <th scope="col">KELAS JABATAN</th> 
+                                    <th scope="col">BESARAN TPP</th> 
+                                    <th scope="col">TOTAL PERSENTASE PENILAIAN</th> 
+                                    <th scope="col">JUMLAH</th> 
+                                    <th scope="col">PPh 21</th> 
+                                    <th scope="col">JUMLAH DITERIMA</th> 
                                 </tr>
                             </thead>
                             <tbody>
-                            <th scope="row">1</th>
+                                    <td scope="row">1</td>
                                     <td>Oman</td>
                                     <td>2123132123</td>
                                     <td>IV/e</td>
                                     <td>test</td>
-                                    <td>60.00</td>
-                                    <td>20.00</td>
-                                    <td>20.00</td>
-                                    <td>00.00</td>
-                                    <td>00.00</td>
-                                    <td>100%</td>
-                                    <td></td>
+                                    <td>0</td>
+                                    <td>20.000.000</td>
+                                    <td>100</td>
+                                    <td>8000000</td>
+                                    <td>1.191.342</td>
+                                    <td>0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -141,6 +136,8 @@
         </div>
     </div>
 </section>
+
+
 <script>
     function exportToExcel(tableId) {
         // Ambil elemen tabel berdasarkan ID
@@ -152,10 +149,12 @@
         excel += '<head><meta charset="UTF-8"></head><body>';
 
         excel += '<style>';
-        excel += 'h5 { margin: 0; padding: 0; }'; // Mengatur margin dan padding menjadi 0 untuk tag h5
+        excel += 'h5 { margin: 0; padding: 0; font-weight: normal;}'; // Mengatur margin dan padding menjadi 0 untuk tag h5
+        excel += 'table { border-collapse: collapse; width: 100%; }'; // Menambahkan aturan CSS untuk tabel
+        excel += 'td, th { border: 1px solid black; padding: 5px; }'; // Menambahkan aturan CSS untuk sel-sel tabel
         excel += '</style>';
 
-        excel += '<h5>LAMPIRAN V</h5>';
+        excel += '<h5>LAMPIRAN VI</h5>';
         excel += '<h5>PERATURAN BUPATI DELI SERDANG</h5>';
         excel += '<h5>NOMOR 04 TAHUN 2019</h5>';
         excel += '<h5>TENTANG</h5>';
@@ -166,10 +165,9 @@
         excel += 'DINAS KESEHATAN KABUPATEN DELI SERDANG<br>';
         excel += 'DINAS KESEHATAN</h3>';
 
-        excel += '<h5>BULAN: JANUARI 2023</h5>';
+        excel += '<h5><b>BULAN: JANUARI 2023</b></h5>';
 
-        // Tambahkan tabel dengan struktur yang sesuai
-        excel += '<table style="border: 1px solid black; border-collapse: collapse; font-family: arial; font-size: 8pt; width: 100%;">';
+        excel += '<table>';
         for (var i = 0; i < rows.length; i++) {
             excel += rows[i].outerHTML;
         }
@@ -178,19 +176,87 @@
 
         excel += '<table style="border-collapse: collapse; font-family: Arial Narrow; font-size: 8pt; width: 100%;">';
         excel += '<tr>';
-        excel += '<td colspan="3" style="border: none;">TELAH DIVERIFIKASI OLEH<br>Tanggal</td>';
-        excel += '<td colspan="3" style="border: none;">Pejabat di Bidang Pemberhentian dan Pensiun BK</td>';
-        excel += '<td colspan="6" style="border: none; padding-left: 50px;">Lubuk Pakam,</td>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
         excel += '</tr>';
         excel += '<tr>';
-        excel += '<td colspan="3" style="border: none;">Ka. Sub. Bag. Hukum, Kepegawaian dan Umum<br>Dinas Kesehatan Kabupaten Deli Serdang</td>';
-        excel += '<td colspan="3" style="border: none;">NIP<br>Pejabat di Bidang Penilaian Kinerja Aparatur dan Promosi BKD</td>';
-        excel += '<td colspan="6" style="border: none; padding-left: 50px;">Sekretaris Dinas Kesehatan<br>Dinas Kesehatan Kabupaten Deli Serdang</td>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-
+        excel += '<td colspan="3" style="border: none;">TELAH DIVERIFIKASI OLEH</td>'; // Kolom 4-12, Baris 1
+        excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
+        excel += '<td colspan="3" style="border: none;">Lubuk Pakam,</td>'; // Kolom 4-12, Baris 1
         excel += '</tr>';
         excel += '<tr>';
-        excel += '<td colspan="3" style="border: none; padding: 5px; padding-top: 50px;"><u>Oman</u><br>NIP. 197107121993031009</td>';
-        excel += '<td colspan="3" style="border: none; padding-top: 50px;">NIP : 197704182003122009</td>';
-        excel += '<td colspan="6" style="border: none; padding-top: 50px; padding-left: 50px;"><u>dr. Tetty Rossanti Keliath</u><br>NIP : 197704182003122009</td>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
+        excel += '<td colspan="3" style="border: none;">Tanggal</td>'; // Kolom 4-12, Baris 2
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
+        excel += '<td colspan="3" style="border: none;">Ka. Sub. Bag. Hukum, Kepegawaian dan Umum</td>'; // Kolom 4-12, Baris 5
+        excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
+        excel += '<td colspan="3" style="border: none;">Sekretaris Dinas Kesehatan</td>'; // Kolom 4-12, Baris 1
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
+        excel += '<td colspan="3" style="border: none;">Dinas Kesehatan Kabupaten Deli Serdang</td>'; // Kolom 4-12, Baris 6
+        excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
+        excel += '<td colspan="3" style="border: none;">Dinas Kesehatan Kabupaten Deli Serdang</td>'; // Kolom 4-12, Baris 1
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
+        excel += '<td colspan="3" style="border: none;"><u>Sri Rezeki</u></td>'; // Kolom 4-12, Baris 10
+        excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
+        excel += '<td colspan="3" style="border: none;"><u>dr. Tetty Rossanti Keliath</u></td>'; // Kolom 4-12, Baris 1
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
+        excel += '<td colspan="3" style="border: none;">NIP. 19710712 199303 1009</td>'; // Kolom 4-12, Baris 11
+        excel += '<td colspan="4" style="border: none;"></td>'; // Kolom 4-12, Baris 1
+        excel += '<td colspan="3" style="border: none;">NIP. 19770418 200312 2 009</td>'; // Kolom 4-12, Baris 1
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
+        excel += '<td colspan="3" style="border: none;">Pejabat di Bidang Pemberhentian dan Pensiun BKD</td>'; // Kolom 4-12, Baris 14
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
+        excel += '<td colspan="12" style="border: none;">NIP.</td>'; // Kolom 1-12, Baris 18
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
+        excel += '<td colspan="3" style="border: none;">Pejabat di Bidang Penilaian Kinerja Aparatur dan Promosi BKD</td>'; // Kolom 4-12, Baris 19
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="12" style="border: none;"></td>'; // Kolom 1, Baris 1-19 kosong
+        excel += '</tr>';
+        excel += '<tr>';
+        excel += '<td colspan="1" style="border: none;"></td>'; // Kolom 1-3, Baris 1-19 kosong
+        excel += '<td colspan="12" style="border: none;">NIP.</td>'; // Kolom 1-12, Baris 23
         excel += '</tr>';
         excel += '</table>';
 
@@ -212,4 +278,14 @@
         a.click();
         document.body.removeChild(a);
     }
+    function exportToPdf() {
+    console.log('Fungsi exportToPdf() dipanggil.');
+    var doc = new jsPDF();
+    doc.text('Ini adalah konten PDF yang dibuat secara dinamis.', 10, 10);
+    doc.save('nama_file.pdf');
+}
+
 </script>
+<!-- <script>
+
+</script> -->

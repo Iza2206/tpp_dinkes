@@ -69,7 +69,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="proses-tpp-unitkerja2.html">
+                            <a href="?page=Proses_TPP_Keuangan">
                                 <i class="bi bi-circle"></i>
                                 <span>Persetujuan TPP oleh Keuangan</span>
                             </a>
@@ -83,7 +83,7 @@
                     </a>
                     <ul class="submenu">
                         <li>
-                            <a href="proses-tpp-unitkerja1.html">
+                            <a href="?page=Pembayaran_TPP">
                                 <i class="bi bi-circle"></i>
                                 <span>Pembayaran TPP</span>
                             </a>
@@ -106,19 +106,19 @@
             </a>
             <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="tables-general.html">
+                    <a href="?page=Persentase_Penilaian">
                         <i class="bi bi-circle"></i>
                         <span>Rekapitulasi Persentase Penilaian (Lampiran V)</span>
                     </a>
                 </li>
                 <li>
-                    <a href="tables-data.html">
+                    <a href="?page=Report_Pembayaran">
                         <i class="bi bi-circle"></i>
                         <span>Rekapitulasi Pembayaran (Lampiran VI)</span>
                     </a>
                 </li>
                 <li>
-                    <a href="tables-general.html">
+                    <a href="?page=Pembayaran_TPP">
                         <i class="bi bi-circle"></i>
                         <span>Laporan Pembayaran Ke Bank</span>
                     </a>
@@ -130,7 +130,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="tables-general.html">
+                    <a href="?page=Pembayaran_TPP">
                         <i class="bi bi-circle"></i>
                         <span>Cek Data Pensiun</span>
                     </a>
@@ -142,7 +142,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="tables-general.html">
+                    <a href="?page=Pembayaran_TPP">
                         <i class="bi bi-circle"></i>
                         <span>Bukti Potong Pajak 1</span>
                     </a>
@@ -160,7 +160,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="tables-general.html">
+                    <a href="?page=Pembayaran_TPP">
                         <i class="bi bi-circle"></i>
                         <span>Rekap TPP Per Satker</span>
                     </a>
