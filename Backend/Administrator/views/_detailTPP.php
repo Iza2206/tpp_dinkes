@@ -54,19 +54,19 @@ if (isset($_GET['id_unit'])) {
                                     </div>
                                     </div>
                                     </div>
-                                    <input type="text" name="id_unit" class="id_unit form-control" readonly>
-                                    <input type="text" name="inp_nip_pegawai" class="inp_nip_pegawai form-control" readonly>
-                                    <input type="text" name="inp_besaran_tpp" class="inp_besaran_tpp form-control" readonly>
-                                    <input type="text" name="inp_golongan" class="inp_golongan form-control" readonly>
+                                    <input type="hidden" name="id_unit" class="id_unit form-control" readonly>
+                                    <input type="hidden" name="inp_nip_pegawai" class="inp_nip_pegawai form-control" readonly>
+                                    <input type="hidden" name="inp_besaran_tpp" class="inp_besaran_tpp form-control" readonly>
+                                    <input type="hidden" name="inp_golongan" class="inp_golongan form-control" readonly>
                                     <!-- ================================================================================== -->
-                                    <input type="text" class="form-control" name="inp_kehadiran" value="30" disabel readonly>
-                                    <input type="text" class="form-control" name="inp_skp" value="20" disabel readonly>
-                                    <input type="text" class="form-control" name="inp_lap_harian" value="50" disabel readonly>
-                                    <input type="text" class="form-control" name="inp_terlambat_dtg" value="0" disabel readonly>
-                                    <input type="text" class="form-control" name="inp_plg_sebelum_wkt" value="0" disabel readonly>
-                                    <input type="text" class="form-control" name="inp_ket" value="0" disabel readonly>
-                                    <input type="text" class="form-control" name="inp_potongan_bln" value="0" disabel readonly>
-                                    <input type="text" class="form-control" name="inp_hukuman_disiplin" value="0" disabel readonly>
+                                    <input type="hidden" class="form-control" name="inp_kehadiran" value="30" disabel readonly>
+                                    <input type="hidden" class="form-control" name="inp_skp" value="20" disabel readonly>
+                                    <input type="hidden" class="form-control" name="inp_lap_harian" value="50" disabel readonly>
+                                    <input type="hidden" class="form-control" name="inp_terlambat_dtg" value="0" disabel readonly>
+                                    <input type="hidden" class="form-control" name="inp_plg_sebelum_wkt" value="0" disabel readonly>
+                                    <input type="hidden" class="form-control" name="inp_ket" value="0" disabel readonly>
+                                    <input type="hidden" class="form-control" name="inp_potongan_bln" value="0" disabel readonly>
+                                    <input type="hidden" class="form-control" name="inp_hukuman_disiplin" value="0" disabel readonly>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                                         <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-md">Simpan</button>
