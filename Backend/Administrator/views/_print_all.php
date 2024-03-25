@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>persentase</title>
+    <title>PRESENTASE PENILAIAN</title>
     <style>
     /* table {
             width: 100%;
@@ -224,8 +224,6 @@
         <td colspan="12" style="border: none;">NIP.</td>
         </tr>
         </table>
-
-    
 </body>
 </html>
 
