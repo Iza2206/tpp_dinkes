@@ -118,25 +118,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="?page=Pembayaran_TPP">
+                    <a href="?page=Laporan_Pembayaran_Bank">
                         <i class="bi bi-circle"></i>
                         <span>Laporan Pembayaran Ke Bank</span>
                     </a>
                 </li>
                 <li>
-                    <a href="tables-data.html">
+                    <a href="?page=Laporan_SPD">
                         <i class="bi bi-circle"></i>
                         <span>Laporan Pengajuan SPD</span>
                     </a>
                 </li>
                 <li>
-                    <a href="?page=Pembayaran_TPP">
+                    <a href="?page=Data_Pensiun">
                         <i class="bi bi-circle"></i>
                         <span>Cek Data Pensiun</span>
                     </a>
                 </li>
                 <li>
-                    <a href="tables-data.html">
+                    <a href="?page=Perbandingan_TPP">
                         <i class="bi bi-circle"></i>
                         <span>Cek Perbandingan Data</span>
                     </a>
